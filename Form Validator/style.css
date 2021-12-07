@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Ephesis";
+  font-size: 22px;
+}
+
+.form-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  background-color: gainsboro;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 30%;
+}
+
+form {
+  padding: 30px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative; /* so tht error message is there with divs and not with screen*/
+  /*absoulte position absolutely positions inside of some parent container tht it can refernce */
+}
+
+.form-control label {
+  display: block; /*  so tht labels goes in its own line and knock the next element down*/
+  font-size: 24px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  left: 0;
+  bottom: 0; /* error msg is at bottom of form-control div element*/
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  background-color: #3498db;
+  color: #fff;
+  border: 2px solid #3498db;
+  font-size: 16px;
+  border-radius: 4px;
+  display: block;
+  margin-top: 20px;
+}
+
+.clr {
+  clear: both; /*its gonna clear any floats above it */
+}
+
+.contain {
+  float: left;
+  width: 33.3%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#mainbar {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  float: right;
+  width: 30%;
+  background-color: #333;
+  color: #fff;
+  padding: 15px; /*this disturbed 30% width criteria so now use box-sizing */
+  box-sizing: border-box;
+}

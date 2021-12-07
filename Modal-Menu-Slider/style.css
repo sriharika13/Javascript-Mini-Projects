@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+:root {
+  --modal-duration: 1s;
+  --primary-color: #30336b;
+  --secondary-color: #be2edd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+body.show-nav {
+  transform: translateX(
+    200px
+  ); /* whole page moves right by 200px which is width of nav-bar*/
+}
+
+nav {
+  background-color: var(--primary-color);
+  border-right: 2px solid rgba(200, 200, 200, 0.1);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  z-index: 100;
+  transform: translateX(-100%);
+  /*translateX has moved whole(100%) nav bar beyond left side of page, but its still stick to page but on leftmost side */
+  /* display: none; ----------can use this also */
+}
+
+nav .profile {
+  padding: 30px 0; /* 30px top and bottom and 0px left and right*/
+  text-align: center;
+}
+
+nav .profile img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%; /* to make it a circle*/
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+nav ul li {
+  border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+  padding: 20px;
+}
+
+nav ul li:first-of-type {
+  border-top: 2px solid rgba(200, 200, 200, 0.1);
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+  padding: 40px 15px;
+  text-align: center;
+  font-size: 130%;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 30px 0;
+}
+
+button,
+input[type="submit"] {
+  background-color: var(--secondary-color);
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.toggle {
+  background-color: rgba(0, 0, 0, 0.3); /* overrided*/
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.cta-btn {
+  padding: 12px 30px; /*overrided*/
+  font-size: 20px;
+}
+
+.container {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 800px; /*fixed with*/
+}
+
+.modal-container {
+  /*its gonna cover the whole page, its gonna b like a overlay*/
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  display: none;
+}
+
+.modal-container.show-modal {
+  display: block;
+  opacity: 1;
+}
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%; /*modal's top border is at 50% level*/
+  left: 50%;
+  /*modal's left border is at 50% level*/
+  /*but to place modal at center, horizontal half of modal should b taken left and vertical half should b taken up*/
+  transform: translate(-50%, -50%); /*translates x and y axis*/
+  max-width: 100%;
+  width: 400px;
+  overflow: hidden;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+.modal-content {
+  padding: 15px;
+  margin: 0;
+}
+
+.modal-form div {
+  margin: 15px 0;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.modal-form .form-input {
+  padding: 8px;
+  width: 100%;
+}
+
+.close-btn {
+  background: transparent; /*to remove pink background and hovering on tht transparent rectangle gives cursor pointer */
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

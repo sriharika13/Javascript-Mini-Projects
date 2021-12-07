@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Merienda&family=Rancho&family=Yesteryear&display=swap");
+
+* {
+  box-sizing: border-box; /*for input box to remain inside of form container*/
+}
+
+body {
+  background-color: aquamarine;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h1 + p {
+  margin-top: 0;
+}
+
+form {
+  background-color: #fff;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  padding: 30px 20px;
+  max-width: 450px;
+  margin: 40px auto;
+}
+
+.form-control {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+  border: 1px solid rgb(153, 151, 151);
+  border-radius: 2px; /* curvature of border*/
+  font-size: 14px;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  font-family: inherit;
+}
+
+.form-control input[type="radio"] {
+  display: inline-block;
+  width: auto;
+}
+
+.form-control input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+button {
+  background-color: rgb(5, 71, 71);
+  border: 1px solid rgb(16, 5, 56);
+  border-radius: 2px; /* curvature of border*/
+  font-size: 16px;
+  font-family: inherit;
+  padding: 10px;
+  display: block;
+  width: 100%;
+}

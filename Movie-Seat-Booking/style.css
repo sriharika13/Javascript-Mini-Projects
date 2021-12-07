@@ -1,0 +1,124 @@
+/* import font style */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242333;
+  font-family: "Lato";
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; /* margin removes unneccesay space on top which is reserved for heading ig*/
+}
+
+.movie-container {
+  margin: 20px 0; /*here top and bottom 20px so below items shifted by 20px down*/
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px;
+}
+
+.container {
+  perspective: 1000px;
+  /* The perspective property defines how far the object is away from the user. 
+  So, a lower value will result in a more intensive 3D effect than a higher value.
+
+When defining the perspective property for an element, it is the CHILD elements that get the perspective view, 
+NOT the element itself. */
+  margin-bottom: 30px;
+}
+
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.row {
+  display: flex;
+}
+
+.seat:nth-of-type(2) {
+  /*seat:nth-of-type will select the second matched seat element*/
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2); /*seat image is scaled a bit*/
+}
+
+.showcase .seat:not(.occupied):hover {
+  /*showcase class has seat class within it, not together so space in between*/
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 2px;
+}
+
+.screen {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  /*The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box,
+   a negative value puts the shadow on the left side of the box*/
+  /*The vertical offset of the shadow. A positive value puts the shadow below the box, 
+   a negative value puts the shadow above the box*/
+  /* box-shadow: none|h-offset v-offset blur spread color */
+}
+
+p.text {
+  margin: 5px 0;
+}
+p.text span {
+  color: #6feaf6;
+}

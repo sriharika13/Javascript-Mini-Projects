@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description"><i>
+      Thank you for taking the time for help us improve the Platform.
+    </i></p>
+
+    <form id="survey-form">
+      <div class ="form-control">
+        <label for ="name" id="label-name">Name</label>
+        <input type="text" id="name" placeholder="Enter a name" required/>
+      </div>
+
+      <div class ="form-control">
+        <label for ="email" id="label-email">Email</label>
+        <input type="email" id="email" placeholder="Enter a email" required/>
+      </div>
+
+      <div class ="form-control">
+        <label for ="age" id="label-age">Age</label>
+        <input type="number" id="age" placeholder="Enter a age" required min="4" max="40"/>
+      </div>
+
+      <div class ="form-control">
+        <label for ="role" id="label-r">Which option best describes your current role?</label>
+        <select name="role" id="role">
+          <option value="student">Student</option>
+          <option value="full-time">Full-time</option>
+          <option value="part-time">Part-time</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class ="form-control">
+        <label>Would you recommend XYZ platform to a friend?</label>
+        <label for="recommend-1"><input type="radio" id="recommend-1" name="recommend"/>Definitely</label>
+        <label for="recommend-2" ><input type="radio" id="recommend-2" name="recommend"/>Maybe</label>
+        <label for="recommend-3"><input type="radio" id="recommend-3" name="recommend"/>Not Sure</label>
+      </div>
+
+      <div class ="form-control">
+        <label for ="feature" id="label-r">What is your favorite feature of freeCodeCamp?</label>
+        <select name="feature" id="feature">
+          <option >Challenges</option>
+          <option >Projects</option>
+          <option >Community</option>
+          <option >Open Source</option>
+        </select>
+      </div>
+
+
+      <div class ="form-control">
+        <label>What would you like to see improved? <small>(Check all that apply)</small></label>
+        <label for="improve-1"><input type="checkbox" name="improve" id="improve-1" />Front-end projects</label>
+        <label for="improve-2"><input type="checkbox" name="improve" id="improve-2" />Back-end projects</label>
+        <label for="improve-3"><input type="checkbox" name="improve" id="improve-3" />Data Visualisation</label>
+        <label for="improve-4"><input type="checkbox" name="improve" id="improve-4" />Data Visualisation</label>
+        <label for="improve-5"><input type="checkbox" name="improve" id="improve-5" />Open Source Community</label>
+        <label for="improve-6"><input type="checkbox" name="improve" id="improve-6" />Gitter help rooms</label>
+        <label for="improve-7"><input type="checkbox" name="improve" id="improve-7" />Forum</label>
+        <label for="improve-8"><input type="checkbox" name="improve" id="improve-8" />Additional Courses</label>
+      </div>
+
+      <div class ="form-control">
+        <label for="comments">Any comments or suggestions?</label>
+        <textarea name="comments" id="comments" placeholder="Enter your comments here..."></textarea>
+       </div>
+
+       <button type="submit">Submit</button>
+    </form>
+    
+  </body>
+</html>
